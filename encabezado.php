@@ -1,6 +1,8 @@
 <?php
 set_time_limit(1200);
 ?>
+
+
         <div class="container-fluid" style="background-color:#2574a9">
             <div class="row">
                 <div class="col-sm-1"><img src="imagenes/medinet.png" height="50" width="100" class="img-responsive img-rounded" alt=""></div>
