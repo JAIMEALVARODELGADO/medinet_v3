@@ -39,36 +39,34 @@ if($id_aten!=0){
 	<table class="table table-hover table-sm table-bordered font13" id="tablaadjunto">
 		<thead style="background-color: #2574a9;color: white; font-weight: bold;">
 			<tr>
-				<td>Archivo</td>
-				<td>Descripción</td>				
-				
-				<td>Editar</td>
-				<td>Eliminar</td>
+				<td width='5%'>Visualizar</td>
+				<td width='85%'>Descripción</td>
+				<td width='5%'>Editar</td>
+				<td width='5%'>Eliminar</td>
 			</tr>
 		</thead>		
 
 		<tbody style="background-color: white">
 			<?php
-			while($row=mysqli_fetch_row($result)){
-				$archivo="adjuntos/".$row[2];
+			while($row=mysqli_fetch_array($result)){
 				?>
 				<tr>
 					<td>
-						<a href="<?php echo $archivo;?>" target="new">
+						<a href="procesos/visualizaradjunto.php?id_adjunto=<?php echo $row['id_adjunto'];?>" target="new">
 							<span class="btn btn-primary btn.sm" data-toggle="modal" title="Visualizar el archivo">
-							<i class="fas fa-search"></i><?php echo $row[2];?>
+							<i class="fas fa-search"></i>
 							</span>
 						</a>
 					</td>
 						
-					<td><?php echo $row[1];?></td>
+					<td><?php echo $row['descripcion_adj'];?></td>
 					<td style="text-align: center;">
 						<span class="btn btn-warning btn.sm" data-toggle="modal" data-target="#modaleditardescripcion" title="Editar El Registro" onclick="FrmActualizar('<?php echo $row[0]?>')">
 						<span class="far fa-edit"></span>
 						</span>
 					</td>
 					<td style="text-align: center;">
-						<span class="btn btn-danger btn.sm" title="Borrar el Registro" onclick="eliminarDatos('<?php echo $row[0]?>','<?php echo $row[1]?>')">
+						<span class="btn btn-danger btn.sm" title="Borrar el Registro" onclick="eliminarDatos('<?php echo $row['id_adjunto']?>','<?php echo $row['descripcion_adj']?>')">
 							<span class="fas fa-trash"></span>
 						</span>
 					</td>

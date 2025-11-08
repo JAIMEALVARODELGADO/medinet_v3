@@ -61,7 +61,7 @@ body {
 
 
 <script type="text/javascript">
-  $('#btnvalidar').click(function(){
+  $('#btnvalidar').click(function(){    
    datos=$('#frm_login').serialize();
    $.ajax({
     type:"POST",

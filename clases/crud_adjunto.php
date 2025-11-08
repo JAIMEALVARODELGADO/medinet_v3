@@ -46,15 +46,6 @@ class crudadjunto{
 		//Aqui elimino el archivo
 		$obj=new conectar();
 		$conexion=$obj->conexion();
-
-		$sql="SELECT archivo_adj FROM consulta_adjunto WHERE id_adjunto='$idadj'";
-		//echo $sql;
-		$cons=mysqli_query($conexion,$sql);
-		$row=mysqli_fetch_row($cons);
-		if(!empty($row[0])){
-			$archivo="../adjuntos/".$row[0];
-			unlink($archivo);
-		}
 		
 		$sql="DELETE FROM consulta_adjunto WHERE id_adjunto='$idadj'";
 		//echo $sql;

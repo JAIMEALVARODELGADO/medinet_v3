@@ -6,7 +6,7 @@ $conexion=$obj->conexion();
 
 $q = strtoupper($_GET["q"]);
 if (!$q) RETURN;
-$sql = "SELECT DISTINCT id_cie,descripcion AS nombre FROM vw_cie
+$sql = "SELECT DISTINCT id_cie,descripcion FROM vw_cie
 		WHERE descripcion LIKE '%$q%' ORDER BY descripcion";
 //echo $sql;
 $rsd=mysqli_query($conexion,$sql);
